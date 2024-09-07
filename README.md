@@ -16,7 +16,8 @@ compilers include Clang 18+ and GCC 14+.
 
 To get started, a few packages will need to be installed on the local system.
 The simplest path to compilation will be `clang` which is natively built to be
-a cross-compiler:
+a cross-compiler (though it does use a native linker if building and targeting
+x86):
 
 ### MacOS
 
@@ -27,7 +28,7 @@ brew install llvm
 ### OpenSuse
 
 ```bash
-sudo zypper install clang
+sudo zypper install clang gcc
 ```
 
 Now that assembling, compilation, linking, and remote debugging are taken care
@@ -52,7 +53,6 @@ sudo zypper install qemu
 The following commands will execute the operating system in a virtual machine:
 
 ```bash
-make clean
-make
-make run
+make ARCH=(x86|aarch64) clean
+make ARCH=(x86|aarch64) run
 ```
