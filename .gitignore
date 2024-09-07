@@ -1,0 +1,5 @@
+# Generated files during compilation
+*.o
+
+# Kernel outputs
+*.elf
