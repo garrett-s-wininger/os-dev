@@ -3,3 +3,4 @@
 
 # Kernel outputs
 *.elf
+*.bin
