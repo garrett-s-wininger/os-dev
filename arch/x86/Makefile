@@ -18,7 +18,7 @@ $(KERNEL_OUTPUT):
 	grub2-file --is-x86-multiboot $(KERNEL_OUTPUT)
 
 run: $(KERNEL_OUTPUT)
-	qemu-system-x86_64 -kernel $^ -nographic
+	qemu-system-x86_64 -kernel $^
 
 clean:
 	rm -f *.o *.elf *.bin
