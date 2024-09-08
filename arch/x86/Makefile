@@ -1,6 +1,6 @@
-CFLAGS=-ffreestanding
 CC=clang -target i386-none-elf
-LDFLAGS=-nostdlib -Tlinker.ld
+CFLAGS=-ffreestanding
+LDFLAGS=-nostdlib -Tlinker.ld -z noexecstack
 
 KERNEL_SOURCES=kernel.c
 ASSEMBLY_SOURCES=boot.s
@@ -21,4 +21,4 @@ run: $(KERNEL_OUTPUT)
 	qemu-system-x86_64 -kernel $^
 
 clean:
-	rm -f *.o *.elf *.bin
+	rm -f *.bin *.o *.efi *.elf
