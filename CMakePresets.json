@@ -1,0 +1,37 @@
+{
+    "version": 9,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 30,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "kernel",
+            "displayName": "Kernel",
+            "description": "Enforce kernel-level compilation and linking flags",
+            "cacheVariables": {
+                "CMAKE_C_FLAGS": "-Wall -Werror --start-no-unused-arguments -ffreestanding --end-no-unused-arguments",
+                "CMAKE_EXE_LINKER_FLAGS": "-Tlinker.ld -nostdlib"
+            }
+        },
+        {
+            "name": "x86-kernel",
+            "displayName": "X86-Kernel",
+            "description": "Kernel-level compilation with x86 cross-compiler",
+            "inherits": [
+                "kernel"
+            ],
+            "toolchainFile": "toolchains/x86_clang.cmake"
+        },
+        {
+            "name": "aarch64-kernel",
+            "displayName": "Aarch64-Kernel",
+            "description": "Kernel-level compilation with Aarch64 cross-compiler",
+            "inherits": [
+                "kernel"
+            ],
+            "toolchainFile": "toolchains/aarch64_clang.cmake"
+        }
+    ]
+}
