@@ -51,7 +51,7 @@ sudo zypper install qemu
 
 Should the compiler of choice not be available within the repo, a user-specifc
 `CMakeUserPresets.json` can be created and referenced when initially configuring
-the project. This file will not be version contarolled to ensure that the config
+the project. This file will not be version controlled to ensure that the config
 doesn't step on other, user-level settings, however, common settings can easily
 be moved to the project level presets for others to take advantage of.
 
